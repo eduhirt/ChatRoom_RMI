@@ -5,14 +5,23 @@
  */
 package chatroom;
 
+import java.rmi.server.UnicastRemoteObject;
+import model.roomList;
+
 /**
  *
  * @author Eduardo
  */
-public class ServerChat {
-    //somente server pode fechar sala, com método closeRoom()
-    //caso ainda tenham users na sala que vai ser fechada, servidor deve mandar mensagem "Sala fechada pelo servidor"
-    //após fechada, a sala tem que ser removida da lista de salas tanto do servidor quanto dos clientes (quando recebe a msg)
-    //servidor deve ser registrado no registro de RMI (rmiregistry) com o nome “Servidor” eu sar a porta “2020” para escutar clientes
-    //deve executar na máquina do servidor
+public class ServerChat extends UnicastRemoteObject implements IServerChat {
+
+    @Override
+    public roomList getRooms() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void createRoom(String roomName) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    } 
+    
 }
