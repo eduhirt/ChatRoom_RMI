@@ -1,27 +1,37 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package chatroom;
 
 import java.rmi.AccessException;
 import java.rmi.RemoteException;
 import model.Mensagem;
 import model.User;
+import model.UserList;
 
 /**
  *
  * @author Eduardo
  */
-public class RoomChat {
+public class RoomChat implements IRoomChat{
     private String roomName;
     private IRoomChat stub;
     private int codigo;
     private String hostaddress;
     private String nome;
+    private UserList listaUsuarios;
     
+    public RoomChat(String roomName) {
+        this.roomName = roomName;
+        this.listaUsuarios = new UserList();
+    }
     
+    public String getRoomName() {
+        return roomName;
+    }
+
+    public void setRoomName(String roomName) {
+        this.roomName = roomName;
+    }
+    
+    @Override
     public void sendMsg(String usrName, String msg){
         // Monta a mensagem
             Mensagem m = new Mensagem();
@@ -52,5 +62,20 @@ public class RoomChat {
             //this.appendMessage("Erro Remoto: " + e.getMessage());
             //disconnect();
         //}
+    }
+    
+    @Override
+    public void joinRoom(String usrName){
+        
+    }
+    
+    @Override
+    public void leaveRoom(String usrName){
+        
+    }
+    
+    @Override
+    public void closeRoom(){
+        
     }
 }

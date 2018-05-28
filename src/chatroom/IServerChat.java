@@ -5,13 +5,13 @@
  */
 package chatroom;
 
-import model.roomList;
+import model.RoomList;
 
 /**
  *
  * @author Eduardo
  */
 public interface IServerChat {
-    public roomList getRooms();
+    public RoomList getRooms();
     public void createRoom(String roomName);
 }

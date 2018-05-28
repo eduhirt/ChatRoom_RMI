@@ -1,24 +1,28 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
+import chatroom.RoomChat;
 import java.util.ArrayList;
 
 /**
  *
  * @author Eduardo
  */
-public class roomList {
+public class RoomList {
+    private ArrayList<RoomChat> salas;
+    
+    public RoomList(){
+        salas = new ArrayList();
+    }
 
     public ArrayList getRoomlist() {
-        return roomlist;
+        return salas;
     }
 
     public void setRoomlist(ArrayList roomlist) {
-        this.roomlist = roomlist;
+        this.salas = salas;
     }
-    private ArrayList roomlist;
+    
+    public void addSala(RoomChat sala){
+        salas.add(sala);
+    }
 }
