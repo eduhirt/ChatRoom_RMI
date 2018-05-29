@@ -10,6 +10,10 @@ import model.RoomList;
 public class ServerChat extends UnicastRemoteObject implements IServerChat {
     private RoomList listaSalas;
 
+    public ServerChat() {
+        listaSalas = new RoomList();
+    }
+
     @Override
     public RoomList getRooms() {
         return listaSalas;
@@ -19,6 +23,12 @@ public class ServerChat extends UnicastRemoteObject implements IServerChat {
     public void createRoom(String roomName) {
         RoomChat room = new RoomChat(roomName);
         listaSalas.addSala(room);
-    } 
+    }
+    
+    public void imprimirListaSalas(){
+        for(int i = 0; i < listaSalas.getRoomList().size(); i++){
+            System.out.println(listaSalas.getRoomList().get(i).getRoomName());
+        }
+    }
     
 }

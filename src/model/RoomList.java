@@ -14,12 +14,12 @@ public class RoomList {
         salas = new ArrayList();
     }
 
-    public ArrayList getRoomlist() {
+    public ArrayList<RoomChat> getRoomList() {
         return salas;
     }
 
-    public void setRoomlist(ArrayList roomlist) {
-        this.salas = salas;
+    public void setRoomList(ArrayList<RoomChat> list) {
+        this.salas = list;
     }
     
     public void addSala(RoomChat sala){
